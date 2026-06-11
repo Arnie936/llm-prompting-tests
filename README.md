@@ -1,6 +1,6 @@
 # Prompting Tests für LLMs
 
-15 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
+16 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
 
 ---
 
@@ -1179,4 +1179,17 @@ Wenn ich mit der Maus über ein Land fahre, soll die Ländergrenze hervorgehoben
 Zeige einen realistischen Planeten Erde mit Schaltern für atmosphärische Wolkendecke, Flugverkehr und Tag/Nacht. Der Nachtmodus soll Stadtlichter anzeigen.
 
 Verwende kostenlose öffentlich verfügbare Assets, Modelle und Layer, falls nötig. Stelle sicher, dass es effizient in einem normalen Webbrowser lädt.
+```
+
+
+---
+
+## 16. Dragomon Monster-Catching-RPG
+
+```text
+Erstelle ein spielbares Monster-Catching-RPG namens „Dragomon“. Das Spiel soll von klassischen Monster-Sammel-Abenteuern und energiegeladenen Shōnen-Kampfkunst-Animes inspiriert sein, aber komplett eigene Charaktere, Kreaturen, Namen, Designs und Welten verwenden.
+
+Spieler sollen eine offene Welt erkunden, wilde Kreaturen in hohem Gras finden, sie fangen, trainieren und in rundenbasierten Kämpfen einsetzen können. Es soll Trainer geben, gegen die man kämpft, ein Levelsystem, Fähigkeiten, Entwicklungen, Items, Heilzentren, verschiedene Gebiete, Quests und ein Ziel, bei dem man stärker wird und die besten Dragomon-Trainer herausfordert.
+
+Der Stil soll dynamisch, farbenfroh und actionreich sein: mit Energie-Auren, Martial-Arts-inspirierten Angriffen, humorvollen Charakteren und dramatischen Kampfeffekten. Keine geschützten Figuren, Namen, Logos oder Designs aus bestehenden Franchises verwenden.
 ```
