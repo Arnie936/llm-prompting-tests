@@ -1,6 +1,6 @@
 # Prompting Tests für LLMs
 
-16 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
+17 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
 
 ---
 
@@ -1193,3 +1193,11 @@ Spieler sollen eine offene Welt erkunden, wilde Kreaturen in hohem Gras finden, 
 
 Der Stil soll dynamisch, farbenfroh und actionreich sein: mit Energie-Auren, Martial-Arts-inspirierten Angriffen, humorvollen Charakteren und dramatischen Kampfeffekten. Keine geschützten Figuren, Namen, Logos oder Designs aus bestehenden Franchises verwenden.
 ```
+
+---
+
+## 17. Auditierter selbstverbessernder Trading-Research-Agent
+
+Ein umfangreicher Master-Prompt für einen Coding Agent, der ein auditierbares, selbstverbesserndes Trading-Forschungssystem aufbaut, testet, im Paper-Modus bereitstellt und an einen lokalen Operator übergibt. Der Prompt enthält harte Sicherheitsgrenzen, Strategie-Recherche, Backtesting, externe Beobachtung, Railway-Deployment und eine ausdrücklich gesperrte Live-Phase.
+
+[Vollständigen deutschen Prompt öffnen](prompts/17-auditierter-selbstverbessernder-trading-research-agent.md)
