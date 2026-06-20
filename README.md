@@ -1,6 +1,6 @@
 # Prompting Tests für LLMs
 
-17 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
+18 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
 
 ---
 
@@ -1201,3 +1201,11 @@ Der Stil soll dynamisch, farbenfroh und actionreich sein: mit Energie-Auren, Mar
 Ein umfangreicher Master-Prompt für einen Coding-Agenten, der ein auditierbares, selbstverbesserndes Trading-Forschungssystem aufbaut, testet, im Paper-Modus bereitstellt und an einen lokalen Operator übergibt. Der Prompt enthält verbindliche Sicherheitsgrenzen, Strategie-Recherche, Backtesting, ein externes Audit, Railway-Deployment und eine ausdrücklich gesperrte Live-Phase.
 
 [Vollständigen deutschen Prompt öffnen](prompts/17-auditierter-selbstverbessernder-trading-research-agent.md)
+
+---
+
+## 18. Scroll-driven Product Landing Page Builder
+
+Ein autonomer Master-Prompt für einen Senior Product Website Builder, der aus einem Produktfoto eine vollständige, polierte, scroll-getriebene Premium-Landingpage baut. Der Prompt erzwingt Higgsfield-Asset-Erstellung, klare Section-Reihenfolge, OKLCH-Palette, Copy-Regeln, Scroll-Konzept, Browser-QA auf Desktop/Tablet/Mobile und finale Ship-Checkliste.
+
+[Vollständigen englischen Prompt öffnen](prompts/18-scroll-driven-product-landing-page-builder.md)
