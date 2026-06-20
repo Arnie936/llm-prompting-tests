@@ -1,6 +1,6 @@
 # Prompting Tests für LLMs
 
-18 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
+19 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
 
 ---
 
@@ -1209,3 +1209,11 @@ Ein umfangreicher Master-Prompt für einen Coding-Agenten, der ein auditierbares
 Ein autonomer Master-Prompt für einen Senior Product Website Builder, der aus einem Produktfoto eine vollständige, polierte, scroll-getriebene Premium-Landingpage baut. Der Prompt erzwingt Higgsfield-Asset-Erstellung, klare Section-Reihenfolge, OKLCH-Palette, Copy-Regeln, Scroll-Konzept, Browser-QA auf Desktop/Tablet/Mobile und finale Ship-Checkliste.
 
 [Vollständigen englischen Prompt öffnen](prompts/18-scroll-driven-product-landing-page-builder.md)
+
+---
+
+## 19. Minecraft-Klon
+
+Eine kompakte deutschsprachige Projektspezifikation für einen einfachen Minecraft-ähnlichen 3D-Blockwelt-Prototypen mit First-Person-Bewegung, Terrain-Generierung, Blockabbau, Blockplatzierung, mehreren Blocktypen, Kollision und Schwerkraft.
+
+[Vollständigen deutschen Prompt öffnen](prompts/19-minecraft-klon.md)
