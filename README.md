@@ -1,6 +1,6 @@
 # Prompting Tests für LLMs
 
-19 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
+20 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
 
 ---
 
@@ -1217,3 +1217,11 @@ Ein autonomer Master-Prompt für einen Senior Product Website Builder, der aus e
 Eine kompakte deutschsprachige Projektspezifikation für einen einfachen Minecraft-ähnlichen 3D-Blockwelt-Prototypen mit First-Person-Bewegung, Terrain-Generierung, Blockabbau, Blockplatzierung, mehreren Blocktypen, Kollision und Schwerkraft.
 
 [Vollständigen deutschen Prompt öffnen](prompts/19-minecraft-klon.md)
+
+---
+
+## 20. World-of-Warcraft-Klon
+
+Eine deutschsprachige Projektspezifikation für einen einfachen spielbaren 3D-Fantasy-MMORPG-Prototypen mit Third-Person-Held, Kampf, Gegner-KI, Charakterwerten, Fähigkeiten, Erfahrung und Level-Up-System.
+
+[Vollständigen deutschen Prompt öffnen](prompts/20-world-of-warcraft-klon.md)
