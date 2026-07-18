@@ -1,6 +1,6 @@
 # Prompting Tests für LLMs
 
-20 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
+21 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
 
 ---
 
@@ -1225,3 +1225,11 @@ Eine kompakte deutschsprachige Projektspezifikation für einen einfachen Minecra
 Eine deutschsprachige Projektspezifikation für einen einfachen spielbaren 3D-Fantasy-MMORPG-Prototypen mit Third-Person-Held, Kampf, Gegner-KI, Charakterwerten, Fähigkeiten, Erfahrung und Level-Up-System.
 
 [Vollständigen deutschen Prompt öffnen](prompts/20-world-of-warcraft-klon.md)
+
+---
+
+## 21. Micron-Quartalsbericht-Video mit Hyperframes
+
+Eine deutschsprachige Projektspezifikation für ein ungefähr einminütiges 16:9-Finanzvideo zum neuesten Micron-Quartalsbericht mit offiziellen Quellen, animierten Hyperframes-Szenen, Diagrammen, deutschem ElevenLabs-Voice-over und dezenter Lofi-Hintergrundmusik.
+
+[Vollständigen deutschen Prompt öffnen](prompts/21-micron-quartalsbericht-video-hyperframes.md)
