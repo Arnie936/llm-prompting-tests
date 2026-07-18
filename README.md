@@ -1230,6 +1230,6 @@ Eine deutschsprachige Projektspezifikation für einen einfachen spielbaren 3D-Fa
 
 ## 21. Micron-Quartalsbericht-Video mit Hyperframes
 
-Eine deutschsprachige Projektspezifikation für ein ungefähr einminütiges 16:9-Finanzvideo zum neuesten Micron-Quartalsbericht mit offiziellen Quellen, animierten Hyperframes-Szenen, Diagrammen, deutschem ElevenLabs-Voice-over und dezenter Lofi-Hintergrundmusik.
+Ein deutscher Prompt für ein ungefähr einminütiges 16:9-Video zum neuesten Micron-Quartalsbericht mit Finanzzahlen, Ausblick, Hyperframes-Animation, deutschem ElevenLabs-Voice-over und leiser Lofi-Hintergrundmusik.
 
 [Vollständigen deutschen Prompt öffnen](prompts/21-micron-quartalsbericht-video-hyperframes.md)
