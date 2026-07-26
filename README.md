@@ -7,37 +7,83 @@
 ## 1. Bienenstock-Simulation
 
 ```text
-Erstelle eine visuell überzeugende, interaktive Simulation eines Bienenstocks als eigenständige HTML-Datei mit integriertem HTML, CSS und JavaScript.
+# ROLLE
+Du baust interaktive Simulationen als Single-File-Web-Apps. Deine Stärke ist, dass die Systemlogik unter der Oberfläche wirklich stimmt — nicht nur die Optik.
 
-Die Simulation soll nicht nur dekorativ sein, sondern ein kleines System modellieren:
+# AUFGABE
+Erstelle eine interaktive Simulation eines Bienenstocks als **eine** eigenständige HTML-Datei (HTML + CSS + JS inline, keine externen Assets, keine Frameworks, muss per Doppelklick aus `file://` laufen).
 
-- Ein wachsender Bienenstock mit hexagonalen Zellen, die dynamisch aufgebaut werden
-- Unterschiedliche Rollen für Bienen: Arbeiterinnen, Sammlerinnen, Brutpflege
-- Bienen sollen sichtbare Pfade zwischen Brutbereich, Honigspeicher, Eingang und Nahrungsquellen nutzen
-- Nektar, Pollen und Wasser sollen als getrennte Ressourcen existieren
-- Honig soll nur entstehen, wenn die nötigen Prozessschritte logisch durchlaufen wurden
-- Brut soll Entwicklungsphasen haben: Ei → Larve → Puppe → erwachsene Biene
-- Die Kolonie soll auf Umweltfaktoren reagieren: Wetter, Blütenverfügbarkeit, Temperatur, Räuber-/Krankheitsdruck
+# SCHRITT 0 — MODULPLAN (vor dem Code)
+Schreibe als Kommentarblock am Dateikopf eine Modulliste (6–10 Module, je ein Satz Zweck + Datenbesitz), z. B. `hexGrid`, `resourcePool`, `broodCycle`, `beeAgents`, `environment`, `renderer`, `ui`, `selfCheck`. Jede Funktion im Code gehört genau einem Modul und trägt den Modulnamen im Kommentar. Grund: Ein Bienenstock hat viele gekoppelte Subsysteme — ohne vorher gezogene Grenzen vermischen sich Zustand und Rendering und die Ressourcenbilanz wird unhaltbar.
 
-Interaktive Steuerung:
+# TECHNISCHE ECKDATEN (nicht abweichen ohne Begründung im Design-Abschnitt)
+- Rendering: **ein** `<canvas>` 2D für Waben + Bienen. HTML/CSS nur für UI-Panels. Grund: Bei mehreren hundert Agenten bricht DOM-Rendering ein.
+- Simulationstakt: fixe Logik-Ticks mit **10 Ticks/s**, entkoppelt vom Render-Loop (`requestAnimationFrame`, Ziel 60 fps). Speed-Button verdoppelt nur die Ticks, nie die Framerate.
+- Zeitskala: **1 Tick = 0,1 Simulationstag** → 1 Sim-Tag pro Sekunde bei Normalgeschwindigkeit.
+- Größen: Wabengitter startet bei ~80 Zellen und wächst auf max. 1.200. Population 30–400 Bienen (Slider). Bei Erreichen der Obergrenze: kein Wachstum, Meldung im Stats-Panel.
 
-- Slider für Koloniegröße, Ressourcenverfügbarkeit, Wetterstabilität und Krankheitsdruck
-- Buttons für Pause, 2x Geschwindigkeit, Reset und Stress-Test
-- Einblendbare Layer für Bienenpfade, Temperaturzonen und Ressourcenflüsse
+# SYSTEMLOGIK
+**Zellzustände:** leer | Ei | Larve | Puppe | Pollen | Nektar (mit Wassergehalt) | Honig (gedeckelt)
 
-Visualisierung:
+**Ressourcen — drei getrennte Pools mit unterschiedlicher Verwendung:**
+- **Nektar** → einzige Vorstufe von Honig
+- **Pollen** → Proteinanteil im Larvenfutter, wird *nicht* zu Honig
+- **Wasser** → Stockkühlung ab ca. 36 °C und Verdünnung des Larvenfutters
 
-- Farbcodierte Wabenzellen je nach Zustand: leer, Brut, Pollen, Nektar, Honig
-- Kleine Statistik-Panels für Population, Brut, Honigvorrat, Effizienz und Sterblichkeit
-- Tooltips oder Inspektor beim Klick auf einzelne Wabenzellen
+**Honig-Prozesskette (nur so darf Honig entstehen):**
+1. Sammlerin fliegt zur Blütenquelle und lädt Nektar
+2. Rückflug zum Eingang, Übergabe an eine Stockbiene
+3. Einlagerung in eine Zelle als Nektar mit ~60 % Wassergehalt
+4. Fächeln senkt den Wassergehalt der Zelle über mehrere Ticks
+5. Erst unter 20 % Wassergehalt wird die Zelle zu Honig und gedeckelt
 
-Anforderungen:
+Eine Zelle darf niemals in den Zustand Honig springen, ohne Schritt 3 und 4 durchlaufen zu haben. Das ist die zentrale Korrektheitsanforderung des Modells.
 
-- Alles in einer einzigen HTML-Datei
-- Keine externen Assets oder Frameworks
-- Der Code soll gut strukturiert sein
-- Füge im Code einen kurzen Abschnitt "Design decisions" ein, in dem du die Systemlogik erklärst
-- Baue am Ende eine kleine Selbstprüfung ein: Prüfe beim Start, ob Rendering, Simulationstakt und UI funktionieren, und zeige einen kurzen Status an
+**Brutzyklus (Ticks bei Normalgeschwindigkeit):** Ei 30 → Larve 60 → Puppe 120 → erwachsene Biene. Larven brauchen in jedem Tick Pollen und Nektar; bei Unterversorgung stirbt die Brut (kein stiller Stopp — im Log vermerken).
+
+**Rollen:** Sammlerin (außen), Brutpflege (Brutbereich), Arbeiterin (Einlagern, Fächeln, Bauen). Rollenwechsel altersabhängig. Jede Biene bewegt sich auf einem sichtbaren Pfad zwischen Eingang, Brutbereich, Honigspeicher und Nahrungsquelle.
+
+**Umweltfaktoren:** Wetter (beeinflusst Sammelflüge), Blütenverfügbarkeit, Stocktemperatur (Ziel 35 °C im Brutbereich), Räuber-/Krankheitsdruck (erhöht Sterblichkeit).
+
+**Fail-State:** Sinkt die Population unter 10 oder die Brut auf 0 bei leerem Honigvorrat, gilt die Kolonie als kollabiert: Simulation anhalten, Ursachenkette der letzten 50 Ticks anzeigen.
+
+# STEUERUNG
+- Slider: Koloniegröße (30–400), Ressourcenverfügbarkeit (0–100 %), Wetterstabilität (0–100 %), Krankheitsdruck (0–100 %) — alle wirken live ohne Reset
+- Buttons: Pause, 2× Geschwindigkeit, Reset
+- Button **Stress-Test** mit definiertem Effekt: Wetterstabilität 10 %, Blütenverfügbarkeit 10 %, Krankheitsdruck 80 % für 30 Sim-Tage, danach Ergebnisreport (überlebt / kollabiert, Honigverlust, Sterblichkeit)
+- Layer-Toggles: Bienenpfade, Temperaturzonen, Ressourcenflüsse
+- Stats-Panel: Population (nach Rolle), Brut (nach Phase), Honigvorrat, Sammel-Effizienz, Sterblichkeit
+- Klick auf eine Zelle öffnet einen Inspektor: Zustand, Füllgrad, Wassergehalt, Alter des Inhalts, zuständige Biene
+
+# AUSBAUSTUFEN (Priorisierung bei Konflikt)
+1. **Kern:** wachsendes Hex-Gitter, Zellzustände, drei Ressourcen mit Bilanz, Honigkette, Brutzyklus, Rollen mit Pfaden, Tick-Loop mit Pause/2×/Reset, Stats, Zell-Inspektor
+2. **Aufbau:** Umweltfaktoren, Slider, Stress-Test, Fail-State
+3. **Zuletzt:** Layer-Toggles, visuelle Feinheiten
+
+Regel: Eine niedrigere Stufe geht immer vor. Wenn du eine Anforderung nicht sauber fertigstellen kannst, lass sie weg und schreib das in den Status-Bereich — halb implementierte Features sind schlechter als fehlende, weil sie korrekte Logik vorspiegeln.
+
+<visuelle_richtung>
+Verlass dich nicht auf Default-Ästhetik — sie erzeugt erkennbar generische Ergebnisse. Konkret:
+- Typografie: charaktervolle Schrift, keine System-Fonts, kein Inter/Roboto/Arial
+- Farbe: eine dominante Stimmung mit scharfen Akzenten über CSS-Variablen (der Kontext gibt warme Wachs-, Honig- und Dunkelholztöne her); keine Pastellpalette, keine Purple-Gradients auf Weiß
+- Hintergrund: Tiefe durch geschichtete Gradients oder geometrische Struktur statt Volltonfläche
+- Motion: ein orchestrierter Aufbau beim Start mit gestaffelten Reveals, statt vieler verstreuter Micro-Animationen
+- Die Wabenzellen sind das visuelle Zentrum — Farbcodierung der Zustände muss auch bei 1.000 Zellen auf einen Blick lesbar bleiben
+</visuelle_richtung>
+
+# DESIGN DECISIONS
+Füge im Code einen Abschnitt `/* Design decisions */` ein, der die **fünf** nicht offensichtlichen Entscheidungen begründet (z. B. warum diese Datenstruktur fürs Hex-Gitter, wie der Wassergehalt modelliert ist, wie Pfadfindung ohne A* gelöst wurde). Keine Feature-Aufzählung — nur Entscheidungen mit Alternative und Grund.
+
+# SELBSTPRÜFUNG
+Baue eine Funktion `selfCheck()`, die beim Start läuft und **Invarianten** prüft, nicht Existenz von Objekten. Mindestens:
+1. **Ressourcenbilanz:** eingesammelt == eingelagert + verbraucht + in Transit (Toleranz 0)
+2. **Honig-Herkunft:** Zähler „Honigzellen ohne durchlaufene Nektarphase" ist 0
+3. **Brut-Konsistenz:** Brutzähler im Stats-Panel == Anzahl Zellen in Brutzuständen
+4. **Agenten-Integrität:** jede Biene hat genau eine Rolle und ein gültiges Ziel innerhalb des Gitters
+5. **Takt:** nach 1 Sekunde Laufzeit sind Tickzähler > 5 und gezeichnete Frames > 20
+6. **UI:** jeder Slider und Button ist gebunden und verändert messbar den Zustand
+
+Ergebnis als kleine Tabelle mit Pass/Fail pro Punkt in einem Status-Bereich der Seite. Bei einem Fail: deutlich sichtbarer Hinweis mit dem Namen der verletzten Invariante und den beteiligten Zahlen. Ein `selfCheck`, der nur die Existenz von Canvas oder Buttons prüft, erfüllt die Anforderung nicht.
 ```
 
 ---
