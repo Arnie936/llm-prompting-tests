@@ -2,7 +2,7 @@
 
 # Prompting Tests für LLMs
 
-21 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
+22 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
 
 ---
 
@@ -1281,3 +1281,10 @@ Eine deutschsprachige Projektspezifikation für einen einfachen spielbaren 3D-Fa
 Ein deutscher Prompt für ein ungefähr einminütiges 16:9-Video zum neuesten Micron-Quartalsbericht mit Finanzzahlen, Ausblick, Hyperframes-Animation, deutschem ElevenLabs-Voice-over und leiser Lofi-Hintergrundmusik.
 
 [Vollständigen deutschen Prompt öffnen](prompts/21-micron-quartalsbericht-video-hyperframes.md)
+
+## 22. ARES-6 Version 2: Realistische Physik
+
+Eine Version-2-Variante des bestehenden ARES-6-Prompts. Der Prompt bleibt inhaltlich gleich, verlangt aber zusätzlich realistische, kollisionssichere Physik: Gliedmaßen dürfen nicht miteinander oder mit dem Roboterkörper kollidieren, der Bot darf nicht durch Objekte der Umgebung laufen, Füße müssen plausible Kontaktpunkte respektieren, und blockierte Bewegungen müssen gestoppt, umgeleitet oder sichtbar stabilisiert werden.
+
+[Vollständigen englischen Prompt öffnen](prompts/22-ares-6-realistische-physik-version-2.md)
+
