@@ -1290,31 +1290,31 @@ Eine Version-2-Variante des bestehenden ARES-6-Prompts. Der Prompt bleibt inhalt
 
 ## 23. Faltbare Drohne in FreeCAD
 
-Ein deutscher CAD-Prompt: Das Modell baut eine faltbare Drohne aus einem Forschungspaper (PDF) in FreeCAD nach, mit Zeitlimit von 55 Minuten. Mit Nachfrage, ob das Modell druckbar und flugfähig wäre.
+Zero-Shot-CAD-Prompt: Eine faltbare Drohne aus einem Forschungspaper (PDF) in FreeCAD nachbauen, parametrisch über vier Armwinkel in die Konfigurationen X, H, O und T faltbar. Dazu ein Vorführ-Starter mit animierten Buttons, STEP-Export, Renders, GIF und eine ehrliche Einschätzung zur Druckbarkeit. Zeitlimit 55 Minuten.
 
 [Vollständigen deutschen Prompt öffnen](prompts/23-faltbare-drohne-in-freecad.md)
 
 ## 24. Gotische Kirche in Blender
 
-Eine gotische Kirche in Blender modellieren, ein 20–30-sekündiges Erklärvideo zum Aufbau rendern, mit deutscher Stimme vertonen und über die Higgsfield CLI an Seedance 2.5 weitergeben. Maximal 50 Minuten, tokeneffizient.
+Zero-Shot-Prompt: Eine gotische Kirche prozedural in Blender bauen, ein 20–30-sekündiges Erklärvideo zum Aufbau rendern (Kraftfluss als Lichteffekt), mit deutscher Stimme, Klangteppich und Beschriftungen. Danach ein einziger Seedance-2.5-Lauf über die Higgsfield CLI, beide Fassungen werden geliefert. Maximal 50 Minuten, tokeneffizient.
 
 [Vollständigen deutschen Prompt öffnen](prompts/24-gotische-kirche-in-blender.md)
 
 ## 25. Mitochondrien als 3D-Erklärvideo
 
-Ein 16:9-Erklärvideo über Mitochondrien, komplett in Blender modelliert, mit Premium-Stimme über die Higgsfield CLI. Nachsatz: das Video über Seedance 2.5 verfeinern.
+Zero-Shot-Prompt: Ein 16:9-Erklärvideo über Mitochondrien, von der Zelle bis zur ATP-Synthase komplett in Blender modelliert, mit Premium-Stimme über die Higgsfield CLI, eigener Musik und SRT-Untertiteln. Danach ein kostenbewusster Seedance-2.5-Test, der den ganzen Film nur bei klarem Gewinn verfeinert.
 
 [Vollständigen deutschen Prompt öffnen](prompts/25-mitochondrien-3d-erklaervideo.md)
 
 ## 26. Super-Bowl-Spot mit dem Claude-Logo
 
-Ein 30–60-sekündiger Werbespot in Blender: Das Claude-Logo als 3D-Männchen repariert ein Auto, befreit einen Fernseher von Werbung und räumt einen PC auf. Musik und Sounds über ElevenLabs in der Higgsfield CLI.
+Zero-Shot-Prompt: Ein 30–60-sekündiger Werbespot in Blender. Das Claude-Logo als 3D-Männchen repariert ein Auto, befreit einen Fernseher von Werbung und räumt einen PC auf, mit Schlussbild und Claim. Musik und Sounds über ElevenLabs in der Higgsfield CLI, mit selbst synthetisiertem Ersatz, falls keine Credits da sind.
 
 [Vollständigen deutschen Prompt öffnen](prompts/26-claude-super-bowl-spot-blender.md)
 
 ## 27. RoboDojo-Test: Roboterarm in Blender und MuJoCo
 
-Ein eigener Roboterarm mit Greifer, in Blender designt und in einer Physik-Simulation funktionsfähig gemacht, per Tastatur und Maus steuerbar, sortiert autonom Würfel. Stufe 2: Vision-Variante mit Prompt-Box, umschaltbar gegen den klassischen Code.
+Zero-Shot-Prompt: Ein eigener Roboterarm mit Greifer, in Blender designt und in MuJoCo funktionsfähig gemacht. Zwei umschaltbare Gehirne: ein schneller Code-Modus, der Würfel sortiert und bei Störungen neu plant, und ein Vision-Modus, in dem Claude nur ein Kamerabild sieht und Aufträge aus einer Prompt-Box ausführt. Mit Video-Tasten, Reset, Tests und Anleitung.
 
 [Vollständigen deutschen Prompt öffnen](prompts/27-robodojo-roboterarm-blender-mujoco.md)
 
