@@ -2,7 +2,7 @@
 
 # Prompting Tests für LLMs
 
-22 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
+27 anspruchsvolle Prompts zum Testen von LLMs, Coding Agents und agentischen Modellen.
 
 ---
 
@@ -1287,4 +1287,34 @@ Ein deutscher Prompt für ein ungefähr einminütiges 16:9-Video zum neuesten Mi
 Eine Version-2-Variante des bestehenden ARES-6-Prompts. Der Prompt bleibt inhaltlich gleich, verlangt aber zusätzlich realistische, kollisionssichere Physik: Gliedmaßen dürfen nicht miteinander oder mit dem Roboterkörper kollidieren, der Bot darf nicht durch Objekte der Umgebung laufen, Füße müssen plausible Kontaktpunkte respektieren, und blockierte Bewegungen müssen gestoppt, umgeleitet oder sichtbar stabilisiert werden.
 
 [Vollständigen englischen Prompt öffnen](prompts/22-ares-6-realistische-physik-version-2.md)
+
+## 23. Faltbare Drohne in FreeCAD
+
+Ein deutscher CAD-Prompt: Das Modell baut eine faltbare Drohne aus einem Forschungspaper (PDF) in FreeCAD nach, mit Zeitlimit von 55 Minuten. Mit Nachfrage, ob das Modell druckbar und flugfähig wäre.
+
+[Vollständigen deutschen Prompt öffnen](prompts/23-faltbare-drohne-in-freecad.md)
+
+## 24. Gotische Kirche in Blender
+
+Eine gotische Kirche in Blender modellieren, ein 20–30-sekündiges Erklärvideo zum Aufbau rendern, mit deutscher Stimme vertonen und über die Higgsfield CLI an Seedance 2.5 weitergeben. Maximal 50 Minuten, tokeneffizient.
+
+[Vollständigen deutschen Prompt öffnen](prompts/24-gotische-kirche-in-blender.md)
+
+## 25. Mitochondrien als 3D-Erklärvideo
+
+Ein 16:9-Erklärvideo über Mitochondrien, komplett in Blender modelliert, mit Premium-Stimme über die Higgsfield CLI. Nachsatz: das Video über Seedance 2.5 verfeinern.
+
+[Vollständigen deutschen Prompt öffnen](prompts/25-mitochondrien-3d-erklaervideo.md)
+
+## 26. Super-Bowl-Spot mit dem Claude-Logo
+
+Ein 30–60-sekündiger Werbespot in Blender: Das Claude-Logo als 3D-Männchen repariert ein Auto, befreit einen Fernseher von Werbung und räumt einen PC auf. Musik und Sounds über ElevenLabs in der Higgsfield CLI.
+
+[Vollständigen deutschen Prompt öffnen](prompts/26-claude-super-bowl-spot-blender.md)
+
+## 27. RoboDojo-Test: Roboterarm in Blender und MuJoCo
+
+Ein eigener Roboterarm mit Greifer, in Blender designt und in einer Physik-Simulation funktionsfähig gemacht, per Tastatur und Maus steuerbar, sortiert autonom Würfel. Stufe 2: Vision-Variante mit Prompt-Box, umschaltbar gegen den klassischen Code.
+
+[Vollständigen deutschen Prompt öffnen](prompts/27-robodojo-roboterarm-blender-mujoco.md)
 
